@@ -7,10 +7,18 @@ import { TypesModule } from './types/types.module';
 import { UsersModule } from './users/users.module';
 import { ImagesModule } from './images/images.module';
 import { CompanyDataModule } from './company-data/company-data.module';
+import { PrismaService } from './prisma/prisma.service';
 
 @Module({
-  imports: [PostsModule, CategoriesModule, TypesModule, UsersModule, ImagesModule, CompanyDataModule],
+  imports: [
+    PostsModule,
+    CategoriesModule,
+    TypesModule,
+    UsersModule,
+    ImagesModule,
+    CompanyDataModule,
+  ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, PrismaService],
 })
 export class AppModule {}
